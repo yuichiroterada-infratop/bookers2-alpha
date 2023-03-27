@@ -33,8 +33,8 @@
           </td>
           <% end %>
           <% if @book.user == current_user %>
-            <td><%= link_to "Edit", edit_book_path %></td>
-            <td><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+            <td><%= link_to "Edit", edit_book_path, class: "btn btn-success" %></td>
+            <td><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger" %></td>
           <% end %>
           <td>
             コメント数：<%= @book.book_comments.count %>
@@ -57,7 +57,7 @@
           </td>
           <td>
           <% if current_user == comment.user %>
-            <%= link_to "Destroy", book_book_comment_path(comment.book, comment), method: :delete, "data-confirm" => "本当に消しますか？" %>
+            <%= link_to "Destroy", book_book_comment_path(comment.book, comment), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger" %>
           <% end %>
           </td>
         </tr>
@@ -68,7 +68,7 @@
         <div class="form-group">
           <h5>コメント入力</h5>
           <%= f.text_area :comment, rows: '5' %></br>
-          <%= f.submit "送信" %>
+          <%= f.submit "送信", class: "btn btn-success" %>
         </div>
       <% end %>
     </div>
