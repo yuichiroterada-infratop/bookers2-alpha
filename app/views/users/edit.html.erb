@@ -1,0 +1,18 @@
+<!--edit_userの画面-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <h1>User info</h1>
+    <%= render "layouts/errors", obj: @user %>
+    <%= form_with model: @user, local:true do |f| %>
+    <h4>name</h1>
+    <%= f.text_field :name %>
+    <h4>Image</h4>
+    <%= f.file_field :profile_image, accept: "image/*" %>
+    <h4>Introduction</h4>
+    <%= f.text_area :introduction %></br>
+    <%= f.submit "Update User" %>
+    <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<!--部分テンプレート　User info-->
+<div>
+  <h2>User info</h2>
+
+  <!--ここに画像を追加-->
+  <p><%= image_tag user.get_profile_image("100x100") %></p>
+
+  <table class="table">
+    <tr></tr>
+    <tr>
+      <th>name</th>
+      <th><%= user.name %></th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th><%= user.introduction %></th>
+    </tr>
+  </table>
+
+  <!--ユーザー編集画面へ遷移-->
+  <div class="row">
+    <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block edit_user_#{user.id}" do %>
+      <i class="fas fa-user-cog"></i>
+    <% end %>
+  </div>
+</div>
