@@ -9,12 +9,13 @@
     <%= f.text_field :title %>
     <h4>Opinion</h4>
     <%= f.text_area :body %></br>
-    <span><%= f.submit "Update Book" %></span>
+    <span><%= f.submit "Update Book", class: "btn btn-info btn-md" %></span>
     <% end %>
+    <div></br></div>
 
     <div>
-      <%= link_to "Show", book_path %> |
-      <%= link_to "Back", books_path %>
+      <%= link_to "Show", book_path, class: "btn btn-success btn-sm" %> |
+      <%= link_to "Back", books_path, class: "btn btn-secondary btn-sm" %>
     </div>
     </div>
   </div>
