@@ -21,7 +21,7 @@
           <td><%= @book.body %></td>
           <% if @book.favorited_by?(current_user) %>
           <td>
-            <%= link_to book_favorite_path(@book), method: :delete do %>
+            <%= link_to book_favorites_path(@book), method: :delete do %>
               <i class="fas fa-heart" style="color: #ea542e;"><%= @book.favorites.count %></i>
             <% end %>
           </td>
